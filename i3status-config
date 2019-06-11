@@ -27,7 +27,9 @@ disk "/" {
 }
 
 battery 0 {
-  format = ": %percentage"
+  status_bat = ""
+  status_chr = ""
+  format = "%status: %percentage"
   integer_battery_capacity = true
   threshold_type = percentage
   low_threshold = 35
@@ -35,6 +37,7 @@ battery 0 {
 
 wireless wlo1 {
   format_up = ":%quality at %essid"
+  format_down = ":DOWN"
 }
 
 time {
