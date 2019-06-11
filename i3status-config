@@ -1,0 +1,42 @@
+general {
+  colors = true
+  color_good = "#82FF8F"
+  color_degraded = "#F9FF88"
+  color_bad = "#FF8A8A"
+
+  output_format = "i3bar"
+  interval = 5
+}
+
+# order += "ipv6"
+order += "disk /"
+order += "wireless wlo1"
+order += "battery 0"
+order += "time"
+
+# ipv6 {
+#   format_up = "IPv6: %ip"
+#   format_down = "No IPv6"
+# }
+
+disk "/" {
+  prefix_type = custom
+  format = "Free : %avail"
+  threshold_type = bytes_avail
+  low_threshold = 50
+}
+
+battery 0 {
+  format = ": %percentage"
+  integer_battery_capacity = true
+  threshold_type = percentage
+  low_threshold = 35
+}
+
+wireless wlo1 {
+  format_up = ":%quality at %essid"
+}
+
+time {
+  format = ": %Y-%m-%d | : %I:%M %p"
+}
