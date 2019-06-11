@@ -12,14 +12,12 @@
 set $mod Mod4
 
 # colors
-set $focused_blue #4E8CD6 
-set $border_blue #325B8B
-set $unfocused_dark #222222
 
-# class                  border           background        text    indicator       child_border
-client.focused           $border_blue     $focused_blue     #FFFFFF $focused_blue   $border_blue
-client.focused_inactive  $unfocused_dark  $unfocused_dark   #A8A8A8 $unfocused_dark $unfocused_dark
-client.unfocused         $unfocused_dark  $unfocused_dark   #A8A8A8 $unfocused_dark $unfocused_dark
+# class                  border  bckgrnd text    indctr  chld_brdr
+client.focused           #325B8B #4E8CD6 #FFFFFF #4E8CD6 #325B8B
+client.focused_inactive  #222222 #222222 #A8A8A8 #222222 #222222
+client.unfocused         #222222 #222222 #A8A8A8 #222222 #222222
+client.urgent            #000000 #FF8A8A #FFFFFF #000000 #FF8A8A
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -166,8 +164,14 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        separator_symbol " | "
         colors {
             background #2F343F
+            separator  #FFFFFF
+            # class            border  bckgrnd text
+            focused_workspace  #325B8B #4E8CD6 #FFFFFF
+            inactive_workspace #222222 #222222 #A8A8A8
+            urgent_workspace   #FF8A8A #FF8A8A #FFFFFF
         }
 }
 
