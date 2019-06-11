@@ -41,5 +41,5 @@ wireless wlo1 {
 }
 
 time {
-  format = ": %Y-%m-%d | : %I:%M %p"
+  format = ": %Y-%m-%d | : %I:%M %p |"
 }
