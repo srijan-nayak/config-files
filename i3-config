@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Courier 10 Pitch Bold 10
+font pango:Fira Code Medium 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -161,7 +161,13 @@ bar {
 }
 
 # Set the wallpaper
-exec_always feh --bg-scale /home/srijan/Pictures/wallpapers/w2.jpg
+exec_always --no-startup-id feh --bg-scale /home/srijan/pictures/wallpapers/w3.png
+
+# Start compton compositor
+exec compton -f
+
+# Make caps lock behave as ctrl
+exec --no-startup-id setxkbmap -option "ctrl:nocaps"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -169,11 +175,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-
-# Make caps lock behave as ctrl
-exec setxkbmap -option "ctrl:nocaps"
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Activate lock screen
 bindsym $mod+q exec /home/srijan/dotfiles/lock.sh
+
