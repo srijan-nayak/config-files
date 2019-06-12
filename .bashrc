@@ -141,7 +141,13 @@ alias update='sudo apt update && sudo apt upgrade -y'
 
 export PATH=~/bash-scripts:$PATH
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h \[\033[33;1m\]\w\n\[\033[m\]> "
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]ubuntu-i3 \[\033[33;1m\]\w\n\[\033[m\]$ "
+
+export PS1="\[\033[36m\]\u"
+export PS1+="\[\033[32m\]@"
+export PS1+="\[\033[33m\]ubuntu-i3 "
+export PS1+="\[\033[34m\]\w\n"
+export PS1+="\[\033[m\]$ "
 
 set -o vi
 
@@ -150,6 +156,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
             eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Git prompt
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
 
 base16_ashes
 # clr
