@@ -1,3 +1,15 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
+
+call plug#end()
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-ashes
+set termguicolors
 syntax on
 syntax enable
 filetype plugin on
@@ -27,11 +39,18 @@ let g:netrw_liststyle=3
 nnoremap Q :q<cr>
 nnoremap W :w<cr>
 nnoremap E :e!<cr>
-noremap j gj
-noremap k gk
 nnoremap <space> za
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 nnoremap <cr> :nohlsearch<cr>
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_ashes'
+
+let g:ale_completion_enabled = 1
+let b:ale_completion_enabled = 1
+let g:ale_linters = {'python': ['pycodestyle']}
+let g:ale_linters_explicit = 1
+
