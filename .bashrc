@@ -116,33 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias ls='ls -lhGF --color'
-alias please='sudo'
-alias clr='clear'
-alias gh='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-alias ps='htop'
-alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD && history -s $TF_CMD'
-alias f='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD && history -s $TF_CMD'
-alias tree='tree -an'
-alias python='python3'
-alias pip='pip3'
-alias ta='tmux attach -t'
-alias tl='tmux ls'
-alias tk='tmux kill-session -t'
-alias ih='hollywood'
-alias nms='nms -f green'
-alias vf='vifm .'
-alias mkdir='mkdir -p'
-alias web='links2'
-alias g++='clang++'
-alias run='bin/main'
-alias clang-tidy='clang-tidy -checks=*'
-alias update='sudo apt update && sudo apt upgrade -y'
-
-export PATH=~/bash-scripts:$PATH
-
-# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]ubuntu-i3 \[\033[33;1m\]\w\n\[\033[m\]$ "
-
 export PS1="\[\033[36m\]\u"
 export PS1+="\[\033[32m\]@"
 export PS1+="\[\033[33m\]ubuntu-i3 "
@@ -163,5 +136,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
-base16_ashes
+# base16_ashes
 # clr
