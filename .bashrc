@@ -122,7 +122,7 @@ export PS1+="\[\033[33m\]ubuntu-i3 "
 export PS1+="\[\033[34m\]\w\n"
 export PS1+="\[\033[m\]$ "
 
-export PATH="/usr/local/android-studio/bin:$PATH"
+export PATH="/home/srijan/dev/flutter/bin:$PATH"
 
 set -o vi
 
