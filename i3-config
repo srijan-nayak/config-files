@@ -140,12 +140,17 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
+assign [class="jetbrains-studio"] $ws3
+assign [class="jetbrains-idea-ce"] $ws3
 assign [class="Pcmanfm"] $ws4
 assign [class="Gimp-2.8"] $ws8
 assign [class="Rawtherapee"] $ws9
 assign [class="obs"] $ws10
 
 for_window [title="Welcome to Android Studio"] floating enable
+for_window [title="Android Virtual Device Manager"] floating enable
+for_window [title="Android Emulator - Pixel_2_API_28:5554"] floating enable
+for_window [title="Welcome to IntelliJ IDEA"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
