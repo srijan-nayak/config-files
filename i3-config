@@ -202,7 +202,7 @@ bar {
 }
 
 # Set the wallpaper
-exec_always --no-startup-id feh --bg-scale /home/srijan/Pictures/wallpapers/w3.png
+exec_always --no-startup-id feh --bg-scale /home/srijan/Pictures/wallpapers/w1.png
 
 # Start compton compositor
 exec --no-startup-id compton -f
@@ -220,7 +220,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Activate lock screen
-bindsym $mod+q exec /home/srijan/dotfiles/lock.sh
+bindsym $mod+q exec /home/srijan/config-files/lock.sh
 
 # systray applications
 exec --no-startup-id volumeicon
