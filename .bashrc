@@ -116,10 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1="\[\033[36m\]\u"
+export PS1="\[\033[01;36m\][\u"
 export PS1+="\[\033[32m\]@"
 export PS1+="\[\033[33m\]ubuntu-i3 "
-export PS1+="\[\033[34m\]\w\n"
+export PS1+="\[\033[34m\]\w]\n"
 export PS1+="\[\033[m\]$ "
 
 export PATH="/home/srijan/dev/flutter/bin:$PATH"
@@ -140,3 +140,6 @@ fi
 
 # base16_ashes
 # clr
+
+export PATH="/home/srijan/anaconda3/bin:$PATH"
+export PATH="$PATH:/home/srijan/dev/flutter/bin"
