@@ -201,8 +201,7 @@ alias la='ls -a'
 alias please='sudo'
 alias clr='clear'
 alias gh='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-alias tree='tree -a -C'
-alias python='python3'
+alias tree='tree --dirsfirst -C'
 alias pip='pip3'
 alias ta='tmux attach -t'
 alias tl='tmux ls'
@@ -211,9 +210,10 @@ alias ih='hollywood'
 alias nms='nms -f green'
 alias mkdir='mkdir -p'
 alias ashes="base16_ashes"
+alias conda-activate="source /home/srijann/anaconda3/bin/activate"
 
-export PATH="/home/srijan/anaconda3/bin:$PATH"
-export PATH="$PATH:/home/srijan/dev/flutter/bin"
+export PATH="/home/srijann/anaconda3/bin:$PATH"
+export PATH="$PATH:/home/srijann/dev/flutter/bin"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
