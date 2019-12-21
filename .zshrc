@@ -214,6 +214,7 @@ alias conda-activate="source /home/srijann/anaconda3/bin/activate"
 
 export PATH="/home/srijann/anaconda3/bin:$PATH"
 export PATH="$PATH:/home/srijann/dev/flutter/bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
