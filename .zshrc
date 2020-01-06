@@ -211,6 +211,7 @@ alias nms='nms -f green'
 alias mkdir='mkdir -p'
 alias ashes="base16_ashes"
 alias conda-activate="source /home/srijann/anaconda3/bin/activate"
+alias grep='grep --color'
 
 export PATH="/home/srijann/anaconda3/bin:$PATH"
 export PATH="$PATH:/home/srijann/dev/flutter/bin"
