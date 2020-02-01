@@ -118,7 +118,7 @@ fi
 
 export PS1="\[\033[01;36m\][\u"
 export PS1+="\[\033[32m\]@"
-export PS1+="\[\033[33m\]ubuntu-i3 "
+export PS1+="\[\033[33m\]\h "
 export PS1+="\[\033[34m\]\w]\n"
 export PS1+="\[\033[m\]$ "
 
@@ -143,3 +143,11 @@ fi
 
 export PATH="/home/srijan/anaconda3/bin:$PATH"
 export PATH="$PATH:/home/srijan/dev/flutter/bin"
+
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+
+zeal-docs-fix
