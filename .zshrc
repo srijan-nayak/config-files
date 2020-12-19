@@ -12,7 +12,7 @@ setopt autocd                                                   # if only direct
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -52,13 +52,13 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
-## Alias section 
+## Alias section
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 
-# Theming section  
+# Theming section
 autoload -U compinit colors zcalc
 compinit -d
 colors
@@ -125,16 +125,16 @@ parse_git_state() {
 
 git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  
+ 
   # If inside a Git repository, print its branch and state
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
-  
+ 
   # If not inside the Git repo, print exit codes of last command (only if it failed)
   [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..[%?])"
 }
 
 # Right prompt with exit status of previous command if not successful
- #RPROMPT="%{$fg[red]%} %(?..[%?])" 
+ #RPROMPT="%{$fg[red]%} %(?..[%?])"
 # Right prompt with exit status of previous command marked with ✓ or ✗
  #RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
 
@@ -159,13 +159,13 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^[[A' history-substring-search-up			
+bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Apply different settigns for different terminals
 case $(basename "$(cat "/proc/$PPID/comm")") in
   login)
-    	RPROMPT="%{$fg[red]%} %(?..[%?])" 
+    	RPROMPT="%{$fg[red]%} %(?..[%?])"
     	alias x='startx ~/.xinitrc'      # Type name of desired desktop after x, xinitrc is configured for it
     ;;
 #  'tmux: server')
@@ -210,11 +210,11 @@ alias ih='hollywood'
 alias nms='nms -f green'
 alias mkdir='mkdir -p'
 alias ashes="base16_ashes"
-alias conda-activate="source /home/srijann/anaconda3/bin/activate"
+alias conda-activate="source /home/srijan/anaconda3/bin/activate"
 alias grep='grep --color'
 
-export PATH="/home/srijann/anaconda3/bin:$PATH"
-export PATH="$PATH:/home/srijann/dev/flutter/bin"
+export PATH="/home/srijan/anaconda3/bin:$PATH"
+export PATH="$PATH:/home/srijan/dev/flutter/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # Base16 Shell
@@ -222,3 +222,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+

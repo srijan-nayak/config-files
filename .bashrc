@@ -150,4 +150,3 @@ zeal-docs-fix() {
     popd >/dev/null || exit
 }
 
-zeal-docs-fix

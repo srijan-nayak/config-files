@@ -51,7 +51,7 @@ noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 nnoremap <cr> :nohlsearch<cr>
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme='base16_ashes'
 
 let g:ale_completion_enabled = 1
