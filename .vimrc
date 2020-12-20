@@ -13,7 +13,7 @@ Plug 'chriskempson/base16-vim'
 call plug#end()
 
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-ashes
+colorscheme desert
 set termguicolors
 syntax on
 syntax enable
@@ -52,10 +52,11 @@ noremap <c-l> <c-w>l
 nnoremap <cr> :nohlsearch<cr>
 
 let g:airline_powerline_fonts = 0
-let g:airline_theme='base16_ashes'
+let g:airline_theme='term'
 
 let g:ale_completion_enabled = 1
 let b:ale_completion_enabled = 1
 let g:ale_linters = {'python': ['pycodestyle']}
 let g:ale_linters_explicit = 1
 
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
