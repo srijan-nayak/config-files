@@ -101,3 +101,16 @@ source $ZSH/oh-my-zsh.sh
 alias ls='ls -lFGH --color=auto'
 
 export PATH="/home/srijan/anaconda3/bin:$PATH"
+
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
