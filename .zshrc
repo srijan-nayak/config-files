@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls -lFGH --color=auto'
+alias ls='ls -lhFGH --color=auto'
 
 export PATH="/home/srijan/anaconda3/bin:$PATH"
 
