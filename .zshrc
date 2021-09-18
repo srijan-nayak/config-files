@@ -98,9 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls -lhFGH --color=auto'
+alias ls="ls -lhFH --color=auto"
+alias clear-downloads="rm ~/Downloads/*"
 
-export PATH="/home/srijan/anaconda3/bin:$PATH"
+export PATH="/home/srijan/anaconda3/bin":$PATH
 
 zeal-docs-fix() {
     pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
@@ -114,5 +115,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-export EDITOR=/usr/bin/code
+export EDITOR=$(which vim)
 
